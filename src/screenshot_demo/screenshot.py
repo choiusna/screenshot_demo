@@ -50,5 +50,14 @@ def main():
     # Generate a unique filename using the current date and time
     now = time.strftime("%Y-%m-%d_%H-%M-%S")
     file_name = f"capture_{now}.png"
-    full_file_path = os.path
+    full_file_path = os.path.join(save_path, file_name)
+
+    # Perform the screen capture
+    print(f"[*] Taking screenshot and saving to: {full_file_path}")
+    img = ImageGrab.grab()
+    img.save(full_file_path)
+
+if __name__ == "__main__":
+    main()
+
 
